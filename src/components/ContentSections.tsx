@@ -8,12 +8,26 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import StoresMap from './StoresMap';
 
 const ContentSections = () => {
   return (
     <>
+      {/* Stores Map Section */}
+      <section id="map" className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Магазины Астаны на карте</h2>
+            <p className="text-muted-foreground text-lg">
+              Найдите ближайшие магазины с актуальными акциями
+            </p>
+          </div>
+          <StoresMap />
+        </div>
+      </section>
+
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 px-4 bg-white">
+      <section id="how-it-works" className="py-20 px-4 bg-gradient-to-b from-white to-purple-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Как это работает</h2>

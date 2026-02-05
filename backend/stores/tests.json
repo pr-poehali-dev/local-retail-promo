@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "Get stores list",
+      "method": "GET",
+      "path": "/?action=list",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "stores": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get stores for map",
+      "method": "GET",
+      "path": "/?action=map",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "stores": "array"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

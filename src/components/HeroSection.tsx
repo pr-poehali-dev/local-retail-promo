@@ -2,7 +2,11 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onRegisterClick?: () => void;
+}
+
+const HeroSection = ({ onRegisterClick }: HeroSectionProps) => {
   return (
     <section className="pt-32 pb-20 px-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-white -z-10" />
@@ -17,13 +21,19 @@ const HeroSection = () => {
           Локальная реклама с реальными покупателями. Без комиссий маркетплейсов. Только живой трафик в ваш офлайн магазин.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="gradient-primary text-white hover:opacity-90 transition-opacity text-lg px-8">
+          <Button 
+            size="lg" 
+            onClick={onRegisterClick}
+            className="gradient-primary text-white hover:opacity-90 transition-opacity text-lg px-8"
+          >
             <Icon name="Rocket" className="mr-2 h-5 w-5" />
             Подключить магазин
           </Button>
-          <Button size="lg" variant="outline" className="text-lg px-8">
-            <Icon name="Play" className="mr-2 h-5 w-5" />
-            Как это работает
+          <Button size="lg" variant="outline" className="text-lg px-8" asChild>
+            <a href="#how-it-works">
+              <Icon name="Play" className="mr-2 h-5 w-5" />
+              Как это работает
+            </a>
           </Button>
         </div>
         <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
